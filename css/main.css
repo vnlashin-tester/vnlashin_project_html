@@ -8,11 +8,28 @@ font-family: "DM Sans", sans-serif;
 font-family: "Poppins", sans-serif;
 */
 
-html, body {
-    font-family: "DM Sans", sans-serif;
+/* Variables in CSS */
+:root {
+    --black: #171718;
+    --black-border: #26292D;
+    --white: #fff;
+    --purple: #5C62EC;
+
+
+    --text-color: var(--black);
+    --dark-bg: var(--black);
+    --dark-border: var(--black-border);
+    --header-text: var(--white);
+    --accent: var(--purple);
 }
 
-.container{
+html, body {
+    font-family: "DM Sans", sans-serif;
+    letter-spacing: -0.5px;
+    color: var(--text-color);
+}
+
+.container {
 
     margin: 0 auto;
     padding: 0 15px;
@@ -23,13 +40,14 @@ html, body {
 
 /* Navigation */
 
-.nav{
+.nav {
     padding: 20px 0;
-    border-bottom: 1px  solid   #26292D;
-    background-color: #171718;
-    color: #FFF;
+    border-bottom: 1px  solid   var(--dark-border);
+    background-color: var(--dark-bg);
+    color: var(--header-text);
+    letter-spacing: normal;
 }
-.nav-row{
+.nav-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,15 +55,15 @@ html, body {
     row-gap: 20px;
 }
 
-.logo{
-    color: #FFF;
+.logo {
+    color: var(--header-text);
     font-size: 24px;
     font-family: "Poppins", sans-serif;
 }
 .logo strong{
     font-weight: 700px;
 }
-.nav-list{
+.nav-list {
     display: flex;
     align-items: center;
     column-gap: 40px;
@@ -54,20 +72,52 @@ html, body {
     font-family: "Poppins", sans-serif;
 }
 
-.nav-list__link{
-    color: #FFF;
+.nav-list__link {
+    color: var(--header-text);
 }
 
 /* Pseudo-element to mark the active link */
-.nav-list__link--active{
+.nav-list__link--active {
     position: relative;
 }
-.nav-list__link--active::before{
+.nav-list__link--active::before {
     content: "";
     position: absolute;
     top: 100%;
     display: block;
     height: 2px;
     width: 100%;
-    background-color: #5C62EC;
+    background-color: var(--accent);
+}
+
+/* Header */
+
+.header {
+    padding: 40px 0;
+    min-height: 695px;
+    background-color: var(--dark-bg);
+    color: var(--header-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.header__wrapper{
+    padding: 0 15px;
+    max-width: 660px;
+
+
+}
+
+.header__title {
+
+}
+
+.header__text {
+
+}
+
+.btn {
+
 }
