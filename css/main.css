@@ -74,7 +74,15 @@ html, body {
 
 .nav-list__link {
     color: var(--header-text);
+
+    /* for focus effect */
+    transition: opacity 0.2s ease-in;
 }
+/* for focus effect */
+.nav-list__link:hover {
+    opacity: 0.8;
+}
+
 
 /* Pseudo-element to mark the active link */
 .nav-list__link--active {
@@ -95,7 +103,14 @@ html, body {
 .header {
     padding: 40px 0;
     min-height: 695px;
+    
     background-color: var(--dark-bg);
+    /* Setup background img */
+    background-image: url(./img/header-bg.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center center;
+
     color: var(--header-text);
     display: flex;
     justify-content: center;
@@ -136,6 +151,27 @@ html, body {
 .header__text p+p {
     margin-top: 0.5em;
 }
-.btn {
 
+.btn {
+    display: inline-block;
+    height: 48px;
+    padding: 12px 28px;
+
+    border-radius: 5px;
+    background-color: var(--accent);
+    color: var(--white);
+    letter-spacing: 0.15px;
+    font-size: 16px;
+    font-weight: 500;
+/* for focus effect */
+    transition: opasity 0.2s ease-in;
+}
+/* Button focus */
+.btn:hover {
+    opacity: 0.8;
+}
+/* Buttom click */
+.btn:active {
+    position: relative;
+    top: 1px;
 }
