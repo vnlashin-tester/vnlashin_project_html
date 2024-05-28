@@ -12,6 +12,13 @@
         <div class="container">
             <div class="nav-row">
                 <a href="./index.html" class="logo"><strong>Freelancer</strong> portfolio</a>
+                
+                <!-- For nigth mode (this place because we should predict the mobile version) NB! to name of class -->
+                <button class="dark-mode-btn">
+                    <img src="./img/icons/sun.svg" alt="Ligth mode" class="dark-mode-btn__icon">
+                    <img src="./img/icons/moon.svg" alt="Dark mode" class="dark-mode-btn__icon">
+                </button>
+                
                 <ul class="nav-list">
                     <!-- Pseudo-class (element)  nav-list__link--active  to  mark active link. See css-->
                     <li class="nav-list__item"><a href="./project-page.html" class="nav-list__link nav-list__link--active">Projects</a></li>
@@ -75,6 +82,9 @@
             </div
         </div>
     </footer>
-    
+    <!-- JS for Night mode -->
+    <script src="./js/main.js"></script>
+
+
 </body>
 </html>
