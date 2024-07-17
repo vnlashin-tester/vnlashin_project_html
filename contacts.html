@@ -32,7 +32,6 @@
     
     </nav>
     
- 
     
     <!-- Section Projects -->
     <main class="section">
@@ -53,18 +52,43 @@
                 <li class="content-list__item">
                     <h2 class="title-2">Email</h2>
                     <p><a href="mailto:webdev@protonmail.com"> webdev@protonmail.com</a></p>
-                </li>
+                </li>          
             
+            </ul>     
             
-            </ul>
-          
-            
-            
-        
-        
-        
+            <!-- Google Maps -->
 
-        </div>
+            <div id="map"></div>
+
+            <!-- <script>
+                function initMap() {
+                    var opt = {
+                        center:{lat: 52.36560706595961, lng: 52.36560706595961},
+                        zoom: 14,
+                    };
+
+                    var map = new google.maps.Map(document,getElementById("map"), opt);
+                }
+            </script> -->
+
+            <script>
+                let map;
+
+                function initMap() {
+                    map = new google.maps.Map(document.getElementById("map"), {
+                        center: { lat: 52.36560706595961, lng: 52.36560706595961 },
+                        zoom: 12,
+                    });
+                }
+
+                window.initMap = initMap;
+            </script>
+
+
+            <script async
+                src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1N5ynhi7ds8B9POXAnqqsSjMrswN_pZA&callback=initMap'>;
+            </script>
+       
     </main>
     
     <!-- Footer -->
@@ -84,6 +108,6 @@
     </footer>
     <!-- JS for Night mode -->
     <script src="./js/main.js"></script>
-
+  
 </body>
 </html>

@@ -309,9 +309,6 @@ html, body {
     position: relative;
     top: 1px;
 }
-
-
-
 /* Projects_main_section */
 
 .section {
@@ -378,8 +375,6 @@ html, body {
 
 /* Content list */
 
-
-
 .content-list {
     margin: 0 auto;
     max-width: 570 px;
@@ -402,13 +397,6 @@ html, body {
 .content-list__item p+p {
     margin-top: 0.5em;
 }
-
-
-
-
-
-
-
 
 
 /* Footer */
@@ -577,5 +565,11 @@ html, body {
     }
 }
 
+/* Page Contacts */
 
+/* For Google Maps */
+#map {
+    height: 400px; 
+    width: 100%; 
+}
 
