@@ -37,56 +37,84 @@
     <main class="section">
         <div class="container">
             <h1 class="title-1">Contacts</h1>
-            
-            <ul class="content-list">
+            <ul class="content-list">   
+                
                 <li class="content-list__item">
-                    <h2 class="title-2">Location</h2>
-                    <p>Moscow, Russia</p>
+                    <h2 class="title-2">Vladimir Lashin</h2>
+                    <p><a href="tel:+31 (063) 111-11-11"> +31 (063) 868-22-31</a></p>
                 </li>
-
+                
                 <li class="content-list__item">
                     <h2 class="title-2">Telegram / WhatsApp</h2>
-                    <p><a href="tel:+79051234567"> +7 (905) 123-45-67</a></p>
+                    <p><a href="tel:+31 (063) 111-11-11"> +31 (063) 868-22-31</a></p>
                 </li>
             
                 <li class="content-list__item">
                     <h2 class="title-2">Email</h2>
-                    <p><a href="mailto:webdev@protonmail.com"> webdev@protonmail.com</a></p>
-                </li>          
-            
+                    <p><a href="mailto:webdev@protonmail.com"> vnlashin.tester@gmail.com</a></p>
+                </li> 
+                
+                <!-- Форма обратной связи -->
+                <li class="content-list__item">
+                    <h2 class="title-2">Feedback Form</h2>
+                    <form class="feedback-form" action="/submit-feedback" method="post">
+                        <label for="name">Name:</label><br>
+                        <input type="text" id="name" name="name" required><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="message">Message:</label><br>
+                        <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </li>
+
+                <li class="content-list__item">
+                    <h2 class="title-2">Location</h2>
+                    <p>Haarlem, The Netherlands</p>
+                </li>         
             </ul>     
             
             <!-- Google Maps -->
 
             <div id="map"></div>
 
-            <!-- <script>
-                function initMap() {
-                    var opt = {
-                        center:{lat: 52.36560706595961, lng: 52.36560706595961},
-                        zoom: 14,
-                    };
+                <script>
+                    let map;
 
-                    var map = new google.maps.Map(document,getElementById("map"), opt);
-                }
-            </script> -->
-
-            <script>
-                let map;
-
-                function initMap() {
-                    map = new google.maps.Map(document.getElementById("map"), {
-                        center: { lat: 52.36560706595961, lng: 52.36560706595961 },
-                        zoom: 12,
-                    });
-                }
-
-                window.initMap = initMap;
-            </script>
-
-
+                    async function initMap() {
+                        // Request needed libraries.
+                        const { Map } = await google.maps.importLibrary("maps");
+                        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+                        const myLatlng = { lat: 52.365279501734165, lng: 4.645357760563795 };
+                        const map = new google.maps.Map(document.getElementById("map"), {
+                          zoom: 11,
+                          center: myLatlng,
+                          mapId: "DEMO_MAP_ID",
+                        });
+                        const marker = new google.maps.marker.AdvancedMarkerElement({
+                          position: myLatlng,
+                          map,
+                          title: "Software services",
+                        });
+                   
+                        map.addListener("center_changed", () => {
+                          // 3 seconds after the center of the map has changed, pan back to the
+                          // marker.
+                          window.setTimeout(() => {
+                            map.panTo(marker.position);
+                          }, 3000);
+                        });
+                        marker.addListener("click", () => {
+                          map.setZoom(17);
+                          map.setCenter(marker.position);
+                        });
+                      }
+                      
+                      initMap();
+                </script>
+         
             <script async
-                src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1N5ynhi7ds8B9POXAnqqsSjMrswN_pZA&callback=initMap'>;
+                src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB1N5ynhi7ds8B9POXAnqqsSjMrswN_pZA&callback=initMap'defer>;
             </script>
        
     </main>
