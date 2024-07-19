@@ -573,12 +573,12 @@ html, body {
     width: 100%; 
 }
 
-/* Стили для формы обратной связи */
+/* For Feedback form */
 .content-list__item .feedback-form {
     border: 1px solid var(--black-border);
-    padding: 20px; /* отступ вокруг всей формы */
-    width: 100%; /* максимальная ширина формы */
-    margin-bottom: 20px; /* отступ снизу */
+    padding: 20px; 
+    width: 100%; 
+    margin-bottom: 20px; 
 
     background-color: white;
 }
@@ -593,16 +593,16 @@ html, body {
 .content-list__item .feedback-form input[type="text"],
 .content-list__item .feedback-form input[type="email"],
 .content-list__item .feedback-form textarea {
-    width: calc(100% - 16px); /* ширина поля с учетом padding */
+    width: calc(100% - 16px); 
     padding: 8px;
     margin-bottom: 10px;
-    box-sizing: border-box; /* чтобы учитывать padding в общей ширине */
-    border: 1px solid var(--black-border); /* рамка */
-    display: block; /* чтобы каждый элемент начинался с новой строки */
+    box-sizing: border-box; 
+    border: 1px solid var(--black-border); 
+    display: block; 
 }
 
 .content-list__item .feedback-form textarea {
-    resize: vertical; /* позволяет пользователю изменять высоту вертикально */
+    resize: vertical; 
 }
 
 .content-list__item .feedback-form input[type="submit"] {
